@@ -20,6 +20,7 @@ class InProcesType extends AbstractType
             ->add('fromWho')
             ->add('html')
             ->add('toWho')
+            ->add('errors')
         ;
     }
     
