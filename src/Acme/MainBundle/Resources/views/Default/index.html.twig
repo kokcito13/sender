@@ -1,0 +1,24 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+    <form action="" method="POST">
+        <div>
+            <label>Subject:</label>
+            <input name="subject" />
+        </div>
+        <div>
+            <label>From:</label>
+            <input name="from" />
+        </div>
+        <div>
+            <label>Html letter:</label>
+            <textarea name="html_letter"></textarea>
+        </div>
+        <div>
+            <label>To:</label>
+            <textarea name="to"></textarea>
+        </div>
+        <div>
+            <input type="submit" value="save"/>
+        </div>
+    </form>
+{% endblock %}
