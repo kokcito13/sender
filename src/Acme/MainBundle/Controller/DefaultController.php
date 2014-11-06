@@ -42,6 +42,7 @@ class DefaultController extends Controller
         $html = $entity->getHtml();
         $mails = explode(PHP_EOL, $entity->getToWho());
         foreach ($mails as $k=>$mail) {
+            $mail = trim($mail);
             if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
                 $failures = array();
                 try {
@@ -69,8 +70,7 @@ class DefaultController extends Controller
         $entity->setToWho(join(PHP_EOL,$mails));
         $em->persist($entity);
         $em->flush();
-        var_dump($entity->getId());
 
-        return new Response('new');
+        return new Response(' ');
     }
 }
