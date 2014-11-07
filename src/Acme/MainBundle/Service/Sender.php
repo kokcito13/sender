@@ -53,8 +53,12 @@ class Sender {
             echo $e->getMessage();
             exit;
         }
+        $mailsString = trim($entity->getToWho());
+        if (empty($mailsString)) {
+            return;
+        }
         $html = $entity->getHtml();
-        $mails = explode(PHP_EOL, $entity->getToWho());
+        $mails = explode(PHP_EOL, $mailsString);
         foreach ($mails as $k=>$mail) {
             $mail = trim($mail);
             if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
